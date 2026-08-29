@@ -1,20 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dharan RM | Electronics Portfolio</title>
+
+<meta name="description"
+content="Dharan RM - Electronics and Communication Engineering student specializing in Embedded Systems, VLSI, PCB Design and IoT.">
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080d18;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(8,13,24,0.95);
+    border-bottom: 1px solid #202b40;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00d9ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #d5dbe7;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #00d9ff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 50px;
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 75px);
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    color: #00d9ff;
+    font-size: clamp(20px, 4vw, 30px);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #b8c2d1;
+    max-width: 700px;
+    margin: auto;
+    font-size: 17px;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    margin: 7px;
+    border: 1px solid #00d9ff;
+    border-radius: 8px;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #00d9ff;
+    color: #06101b;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    color: #00d9ff;
+    font-size: 34px;
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-text {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    color: #c5cedb;
+    font-size: 17px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.skill {
+    background: #111a2b;
+    border: 1px solid #26344d;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.skill h3 {
+    color: #00d9ff;
+    margin-bottom: 12px;
+}
+
+.skill p {
+    color: #c3ccd9;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 25px;
+}
+
+.project {
+    background: #111a2b;
+    border: 1px solid #26344d;
+    padding: 28px;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-6px);
+    border-color: #00d9ff;
+}
+
+.project-number {
+    color: #69768b;
+    font-size: 14px;
+}
+
+.project h3 {
+    color: #00d9ff;
+    margin: 10px 0;
+}
+
+.project p {
+    color: #c1cad8;
+}
+
+.project-tech {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #8fdff0;
+}
+
+.project-buttons {
+    margin-top: 20px;
+}
+
+.project-buttons a {
+    display: inline-block;
+    margin-right: 12px;
+    color: #00d9ff;
+}
+
+
+/* =========================
+   LEARNING
+========================= */
+
+.learning {
+    text-align: center;
+}
+
+.learning-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.learning-item {
+    background: #111a2b;
+    border: 1px solid #26344d;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: #d4dce8;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    margin: 12px;
+    color: #c4ccda;
+}
+
+.contact a {
+    color: #00d9ff;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #202b40;
+    color: #7e899a;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px) {
+
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    section {
+        padding: 70px 20px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+<div class="nav-container">
+
+<div class="logo">
 Dharan RM
-────────────────────────
-Electronics & Embedded Systems
+</div>
 
+<div class="nav-links">
+
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#learning">Learning</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Dharan RM</h1>
+
+<h2>
+Electronics & Embedded Systems Enthusiast
+</h2>
+
+<p>
+Final-year Electronics and Communication Engineering student
+passionate about Embedded Systems, VLSI, PCB Design,
+IoT and Robotics.
+</p>
+
+
+<div class="buttons">
+
+<a class="btn" href="#projects">
+View My Projects
+</a>
+
+<a class="btn"
+href="resume.pdf"
+target="_blank">
+Download Resume
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+<div class="container">
+
+<h2 class="section-title">
 About Me
-Skills
-Projects
-    ├── TraGen
-    ├── ESP32 Board
-    ├── Smart Solar Panel
-    └── Other Projects
+</h2>
 
-Internships
-Certifications
-Project Videos
-GitHub
-Resume
-Contact
-────────────────────────
-🤖 Ask Dharan AI
+<p class="about-text">
+
+I am a final-year Electronics and Communication Engineering
+student interested in Embedded Systems, VLSI, PCB Design,
+IoT and Robotics.
+
+I enjoy converting electronics concepts into practical
+hardware projects using microcontrollers, sensors and
+communication technologies.
+
+I am continuously improving my skills through projects,
+internships and hands-on experimentation.
+
+My goal is to build a strong career in the electronics
+and embedded systems field.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+<div class="container">
+
+<h2 class="section-title">
+Technical Skills
+</h2>
+
+
+<div class="skills-grid">
+
+
+<div class="skill">
+
+<h3>Embedded Systems</h3>
+
+<p>
+ESP32<br>
+Arduino<br>
+ARM Cortex-M<br>
+Embedded C<br>
+Sensor Interfacing<br>
+IoT
+</p>
+
+</div>
+
+
+<div class="skill">
+
+<h3>Electronics</h3>
+
+<p>
+Digital Electronics<br>
+Analog Electronics<br>
+Circuit Design<br>
+PCB Design<br>
+Schematic Design<br>
+Hardware Debugging
+</p>
+
+</div>
+
+
+<div class="skill">
+
+<h3>VLSI</h3>
+
+<p>
+Digital Logic<br>
+CMOS Fundamentals<br>
+Verilog<br>
+RTL Concepts<br>
+Digital Design
+</p>
+
+</div>
+
+
+<div class="skill">
+
+<h3>Programming & Tools</h3>
+
+<p>
+C<br>
+Python<br>
+Arduino IDE<br>
+Git & GitHub<br>
+OpenCV
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+<div class="container">
+
+<h2 class="section-title">
+Featured Projects
+</h2>
+
+
+<div class="project-grid">
+
+
+<!-- PROJECT 1 -->
+
+<div class="project">
+
+<span class="project-number">
+PROJECT 01
+</span>
+
+<h3>
+TraGen – Traffic Communication
+</h3>
+
+<p>
+ESP32-based traffic communication project
+designed to explore embedded and IoT-based
+communication systems.
+</p>
+
+<div class="project-tech">
+
+ESP32 • IoT • Embedded Systems
+
+</div>
+
+<div class="project-buttons">
+
+<a href="#" target="_blank">
+🎥 Video
+</a>
+
+<a href="#" target="_blank">
+💻 GitHub
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- PROJECT 2 -->
+
+<div class="project">
+
+<span class="project-number">
+PROJECT 02
+</span>
+
+<h3>
+Custom ESP32 Development Board
+</h3>
+
+<p>
+Compact custom ESP32 board integrating
+an MPU6050 motion sensor and USB Type-C
+interface.
+</p>
+
+<div class="project-tech">
+
+ESP32 • MPU6050 • PCB Design
+
+</div>
+
+<div class="project-buttons">
+
+<a href="#" target="_blank">
+📐 PCB
+</a>
+
+<a href="#" target="_blank">
+🎥 Video
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- PROJECT 3 -->
+
+<div class="project">
+
+<span class="project-number">
+PROJECT 03
+</span>
+
+<h3>
+Smart Hybrid Solar Panel
+</h3>
+
+<p>
+Solar-energy project focused on monitoring
+and improving the utilization of solar
+energy through a smart embedded system.
+</p>
+
+<div class="project-tech">
+
+Solar Energy • Sensors • Embedded Systems
+
+</div>
+
+<div class="project-buttons">
+
+<a href="#" target="_blank">
+🎥 Video
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- PROJECT 4 -->
+
+<div class="project">
+
+<span class="project-number">
+PROJECT 04
+</span>
+
+<h3>
+ESP32 Hobby Projects
+</h3>
+
+<p>
+Hands-on experiments involving ESP32,
+sensors, displays, wireless communication,
+motors and IoT systems.
+</p>
+
+<div class="project-tech">
+
+ESP32 • Sensors • IoT • Arduino
+
+</div>
+
+<div class="project-buttons">
+
+<a href="#" target="_blank">
+💻 GitHub
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CURRENTLY LEARNING
+========================= -->
+
+<section id="learning">
+
+<div class="container">
+
+<h2 class="section-title">
+Currently Learning
+</h2>
+
+
+<div class="learning">
+
+<div class="learning-list">
+
+<div class="learning-item">
+Embedded C
+</div>
+
+<div class="learning-item">
+ARM Cortex-M
+</div>
+
+<div class="learning-item">
+ESP32
+</div>
+
+<div class="learning-item">
+PCB Design
+</div>
+
+<div class="learning-item">
+VLSI
+</div>
+
+<div class="learning-item">
+Verilog
+</div>
+
+<div class="learning-item">
+IoT
+</div>
+
+<div class="learning-item">
+Robotics
+</div>
+
+<div class="learning-item">
+Python
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact">
+
+<h2 class="section-title">
+Let's Connect
+</h2>
+
+<p>
+Interested in electronics, embedded systems,
+VLSI, PCB design and IoT opportunities.
+</p>
+
+
+<p>
+📧 Email:
+<a href="mailto:YOUR_EMAIL@gmail.com">
+YOUR_EMAIL@gmail.com
+</a>
+</p>
+
+
+<p>
+💻 GitHub:
+<a href="https://github.com/YOUR_USERNAME"
+target="_blank">
+GitHub Profile
+</a>
+</p>
+
+
+<p>
+🔗 LinkedIn:
+<a href="https://www.linkedin.com/in/YOUR_LINKEDIN/"
+target="_blank">
+LinkedIn Profile
+</a>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+© 2026 Dharan RM |
+Electronics & Engineering Portfolio
+
+</footer>
+
+
+</body>
+</html>
